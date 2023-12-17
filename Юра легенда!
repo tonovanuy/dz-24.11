@@ -1,0 +1,45 @@
+// human.h
+#ifndef HUMAN_H
+#define HUMAN_H
+
+#include <string>
+
+struct Human {
+    std::string name;
+    int age;
+};
+
+void promptUserForData(Human& person);
+
+#endif
+
+
+2.
+// human.cpp
+#include "human.h"
+#include <iostream>
+
+void promptUserForData(Human& person) {
+    std::cout << "Введіть ім'я: ";
+    std::cin >> person.name;
+
+    std::cout << "Введіть вік: ";
+    std::cin >> person.age;
+}
+
+3. 
+// main.cpp
+#include "human.h"
+#include <iostream>
+
+int main() {
+    Human person;
+
+    promptUserForData(person);
+
+    std::cout << "\nДані введені користувачем:\n";
+    std::cout << "Ім'я: " << person.name << "\n";
+    std::cout << "Вік: " << person.age << " років\n";
+
+    return 0;
+}
